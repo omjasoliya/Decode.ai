@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decode AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-green: #22c55e;
+        --accent-red: #ef4444;
+        --bg-light: #fdfdfd;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-light);
+        color: #1e293b;
+        overflow-x: hidden;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #e2e8f0;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #cbd5e1;
+      }
+      .font-mono {
+        font-family: 'Fira+Code', monospace;
+      }
+      .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
+      }
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes tubelight {
+        0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+          opacity: 1;
+          text-shadow: 0 0 10px rgba(34, 197, 94, 0.8), 0 0 20px rgba(34, 197, 94, 0.5);
+        }
+        20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+          opacity: 0.4;
+          text-shadow: none;
+        }
+      }
+      .animate-tubelight {
+        animation: tubelight 4s infinite;
+      }
+      /* Vision Flow Animations */
+      @keyframes scan-fast {
+        0% { transform: translateY(-100%); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(200%); opacity: 0; }
+      }
+      .animate-scan-fast {
+        animation: scan-fast 2s ease-in-out infinite;
+      }
+      @keyframes ping-slow {
+        0% { transform: scale(1); opacity: 0.8; }
+        70%, 100% { transform: scale(1.6); opacity: 0; }
+      }
+      .animate-ping-slow {
+        animation: ping-slow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+      }
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 12s linear infinite;
+      }
+      @keyframes reverse-spin {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+      }
+      .animate-reverse-spin {
+        animation: reverse-spin 10s linear infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
